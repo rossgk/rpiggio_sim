@@ -30,3 +30,6 @@ which has nice features, like a graphical display for the GPIOs.
 
 The *_RPiggio_* code was created from scratch by the author, purely to reproduce the behaviour of the 
 RPi hardware on an independent (eg MacOSX) development machine. It should work fine in Python2.7 on any platform.
+
+### Arppy – the Project Mascot
+He was born in the open clipart pen on Pixbay.
