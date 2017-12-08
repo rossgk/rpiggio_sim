@@ -33,3 +33,61 @@ RPi hardware on an independent (eg MacOSX) development machine. It should work f
 
 ### Arppy – the Project Mascot
 He was born in the open clipart pen on Pixbay.
+
+# To Use RPiggio:
+Simply put the rpiggio_sim.py file in the same directory as your new Python2.7 code and evoke it with an import:
+    from RPiggio import *                     # add the simulator objects etc
+    GPIO = RPi_GPIO_Surrogate()               # Standin for the GPIO init
+    
+    SW1_PIN = 15                              # choose a GPIO pin to attach a switch to
+    GPIO.PIN_SIM[ SW1_PIN ] = HI              # set an initial state
+
+The surrogate GPIO object lets you proceed with normal GPIO cmds, like:
+
+    GPIO.setup(SW3_PIN, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)       # Set PullDown
+    sleep(2)
+    print "Our pin sees: " + str(GPIO.input(SW1_PIN))
+    
+A better approach for code that transports easily between development and target hardware is to 
+conditionally load the simulator versus the real GPIO library on the target hardware. 
+Use the platform library in Python:
+
+    import platform
+    thisBox = platform.system()
+     
+    SW1_PIN = 15                                  # choose a GPIO pin to attach a switch to
+    
+    if thisBox == "Darwin":                       # This detects the MacOSX environment
+        # Conditional libary import, allows development on non RPi machine
+        from RPiggio import *                     # add the objects etc
+        GPIO = RPi_GPIO_Surrogate()               # Standin for the GPIO init
+        
+        GPIO.PIN_SIM[ SW1_PIN ] = HI              # set an initial state for simulator on pin 15
+        
+    elif thisBox == "Linux":
+        import RPi.GPIO as GPIO
+    
+    GPIO.setup(SW3_PIN, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)       # Set PullDown
+    sleep(2)
+    print "Our pin sees: " + str(GPIO.input(SW1_PIN))
+    
+Thus the same code can be run on the RPi without any changes and you can test on your Mac.
+If you're on Windows, you just check the documentation for Platform and detect that. 
+
+You can even do interrupts. The result is a probablistic event-driven, thread-based interrupt
+that calls your designated code block just the same way as the real library does. 
+Some sample code is likely required for you to try that. 
+
+Basically it uses the call:
+    
+    GPIO.add_event_detect( PIR_PIN, GPIO.RISING, callback=interruptRoutine)     # call for an interrupt routine
+
+And then a routine gets evoked based on some randomness you'll need to tweak in the library. 
+
+    def interruptRoutine( timeStamp):
+        ''' Routine called upon interrupt event'''
+        print " INTERRUPT called "
+
+Some nice things can be done with the python Queue library to process the threaded events.
+_More to come on this later_
+
