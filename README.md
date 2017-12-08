@@ -1,9 +1,13 @@
-# rpiggio_sim 
-![Arppy - Project Mascot](images/arppy_logo_s.png) 
-RPiggio is a RaspberryPi General Purpose Input/Output (GPIO) simulator for Python development
+# rpiggio_sim  ![Arppy - Project Mascot](images/arppy_logo_s.png) 
 
 
-RPiggio is a simulator that behaves much as the RPi.GPIO library that is resident on the RaspberryPi Hardware.
+##Overview
+_RPiggio_ is a RaspberryPi General Purpose Input/Output (GPIO) simulator for Python development
+
+*Who Would Use This* 
+If you're writing some code for an RPi board, but want to draft it on your desktop/laptop machine
+before you test it on your hardware, _RPiggio_ will help you out.
+*RPiggio* is a simulator that behaves much as the RPi.GPIO library on the RaspberryPi Hardware.
 
     This software lets you write code for the RaspberryPi hardware, but thoroughly test
     and debug it before you load it onto the hardware. Invariably we have syntax and algorithm
