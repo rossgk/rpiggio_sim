@@ -4,7 +4,10 @@
 ## Overview
 *_RPiggio_* is a RaspberryPi General Purpose Input/Output (GPIO) simulator for Python development
 
-*Who Would Use This* 
+### Caveat
+This *_RPiggio_* project is in a very early form. Documentation and such is in progress. Watch this space 
+
+### Who Would Use This 
 If you're writing some code for an RPi board, but want to draft it on your desktop/laptop machine
 before you test it on your hardware, *_RPiggio_* will help you out.
 *RPiggio* is a simulator that behaves much as the RPi.GPIO library on the RaspberryPi Hardware.
