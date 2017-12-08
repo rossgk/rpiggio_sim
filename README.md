@@ -1,4 +1,5 @@
-![](images/arppy_logo_s.png) # rpiggio_sim 
+# rpiggio_sim 
+![Arppy - Project Mascot](images/arppy_logo_s.png) 
 RPiggio is a RaspberryPi General Purpose Input/Output (GPIO) simulator for Python development
 
 
