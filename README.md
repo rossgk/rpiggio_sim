@@ -5,15 +5,15 @@
 *_RPiggio_* is a RaspberryPi General Purpose Input/Output (GPIO) simulator for Python development
 
 ### Caveat
-This *_RPiggio_* project is in a very early form. Documentation and such is in progress. Watch this space 
+This *_RPiggio_* is an small exploratory project. Documentation and such is minimal. 
 
 ### Who Would Use This 
-If you're writing some code for an RPi board, but want to draft it on your desktop/laptop machine
-before you test it on your hardware, *_RPiggio_* will help you out.
-*RPiggio* is a simulator that behaves much as the RPi.GPIO library on the RaspberryPi Hardware.
+If you're writing some code for an RPi board, but want to draft it on your desktop before 
+you test it on your hardware, *_RPiggio_* will help you out.
+*RPiggio* is simulates the behavior of the RPi.GPIO library on the RaspberryPi Hardware.
 
     This software lets you write code for the RaspberryPi hardware, but thoroughly test
-    and debug it before you load it onto the hardware. Invariably we have syntax and algorithm
+    and debug it before you load it onto the hardware. Invariably one has syntax and algorithmic
     mistakes during development. This lets you fix those with your favourite editor/IDE before
     the more tedious copy-over to, and cumbersome debugging environment of, the target hardware.
     
@@ -32,7 +32,7 @@ The *_RPiggio_* code was created from scratch by the author, purely to reproduce
 RPi hardware on an independent (eg MacOSX) development machine. It should work fine in Python2.7 on any platform.
 
 ### Arppy – the Project Mascot
-He was born in the open clipart pen on Pixbay.
+He was born out of the open clipart mud on Pixbay.
 
 # To Use RPiggio:
 Simply put the rpiggio_sim.py file in the same directory as your new Python2.7 code and evoke it with an import:
